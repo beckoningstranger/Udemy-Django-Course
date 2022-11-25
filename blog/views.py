@@ -13,18 +13,4 @@ def posts(request):
 
 
 def post_detail(request, slug):
-    match(slug):
-        case "1":
-            return (render(request, 'blog/blog_post.html', {
-                "slug": slug
-            }))
-        case "2":
-            return (render(request, 'blog/blog_post.html', {
-                "slug": slug
-            }))
-        case "3":
-            return (render(request, 'blog/blog_post.html', {
-                "slug": slug
-            }))
-        case _:
-            raise Http404()
+   return render(request, "blog/post-detail.html")
