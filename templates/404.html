@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/blog-post.css" %}"/>
+{% endblock css_files %}
+{% block page_title %}
+    Something went wrong - we could not find that page!
+{% endblock page_title %}
+{% block content %}
+    <h1>This is terrible, we have sent our dev team to the dungeons!</h1>
+    <p>They are now hacking away at their laptops... we'll see how that turns out.</p>
+{% endblock content %}

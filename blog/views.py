@@ -4,24 +4,31 @@ from django.shortcuts import render
 
 
 # Create your views here.
-def index(request):
-    return (HttpResponse('You reached index().'))
+def starting_page(request):
+    return (render(request, 'blog/index.html', {
+        "content_snippet": "You have reached starting_page()."
+    }))
 
 
-def url_handler(request, url_part):
-    match(url_part):
-        case "posts":
-            return (HttpResponse('You reached posts().'))
-        case _:
-            raise Http404('404')
+def posts(request):
+    return (render(request, 'blog/index.html', {
+        "content_snippet": "You have reached posts()."
+    }))
 
-def show_blog_posts(request, slug):
+
+def post_detail(request, slug):
     match(slug):
         case "1":
-            return (HttpResponse('one'))
+            return (render(request, 'blog/blog_post.html', {
+                "slug": slug
+            }))
         case "2":
-            return (HttpResponse('two'))
+            return (render(request, 'blog/blog_post.html', {
+                "slug": slug
+            }))
         case "3":
-            return (HttpResponse('three'))
+            return (render(request, 'blog/blog_post.html', {
+                "slug": slug
+            }))
         case _:
             raise Http404()
