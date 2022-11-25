@@ -14,12 +14,14 @@
                  alt="Max - The Author of this Blog"/>
             <h2>MAX'S BLOG</h2>
         </header>
-        <p>Hi, I'm Jan and I am learning Django.</p>
+        <p>Hi, I'm Max and I am learning Django.</p>
     </section>
     <section id="latest-posts">
         <h2>My Latest Posts</h2>
         <ul>
-            {% include "blog/includes/post.html" %}
+            {% for post in posts %}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
         </ul>
     </section>
     <section id="about">
