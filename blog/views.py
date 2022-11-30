@@ -1,5 +1,6 @@
 from datetime import date
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from .models import Post
 
 all_posts = [
     {
@@ -82,6 +83,7 @@ def starting_page(request):
 
 
 def posts(request):
+    all_posts = Post.objects.all().order_by("date")
     return (render(request, 'blog/all-posts.html', {
         "all_posts": all_posts
     }))
